@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decode the Message</title>
+    <style>
+        body {
+            font-family: "Courier New", monospace;
+            white-space: pre-wrap;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        h1, h2, h3, p, .code {
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+        }
+        .code {
+            font-size: 1.2em;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Decode-the-message</h1>
+        <p>Bella bro, se hai scannerizzato il QR code, sei già un passo avanti a tutti.</p>
+        <p>In breve non avevo nulla da fare e ho creato un codice segreto secondo il cifrario di Vigenère.</p>
+        
+        <h2>Come funziona?</h2>
+        <p>Bisogna associare ad ogni lettera dell’alfabeto italiano un numero:</p>
+        <p>A : 0, B : 1, C : 2…</p>
+        <p>Questo per tutte le lettere fino alla Z saltando le lettere inglesi (J, K, W, X, Y).</p>
+        <p>Dopodiché bisogna decidere una parola chiave ad esempio:</p>
+        <p class="code">L U C E</p>
+        
+        <p>A questo punto, seguendo il ragionamento di prima, dobbiamo associare alle lettere della parola chiave un numero, nel nostro caso:</p>
+        <p class="code">9 18 2 4</p>
+        
+        <p>Una volta deciso il messaggio da decifrare dovremo mettere in colonna le due parole e sommare i rispettivi numeri.
+        Nel caso in cui la somma di questi ultimi dovesse superare il 20, ovvero la Z, andremo a sottrarre al numero ottenuto 21, arrivando così ad avere la nostra lettera.</p>
+        
+        <h2>Esempio</h2>
+        <p>Parola Chiave: <span class="code">L U C E</span></p>
+        <p>Messaggio da decifrare: <span class="code">G H E P A R D O</span></p>
+        <p>
+        L  U  C  E  L  U  C  E  
+        9  18  2  4  9  18  2  4  
+        
+        G  H  E  P  A  R  D  O  
+        6  7  4  13  0  15  3  12  
+        
+        15  4  6  17  9  18  5  16  
+        </p>
+        <p class="code">Messaggio in codice: R E G T L U F S</p>
+        
+        <h2>Ora tocca a te!</h2>
+        <p>Ovviamente dovrai decifrare il messaggio senza sapere la parola chiave. Il messaggio è:</p>
+        <p class="code">G D Z S P S U U A     Z Z     M U I</p>
+        
+        <p>Se credi di aver scoperto il messaggio non esitare a scrivermi su <a href="mailto:vitovolty@gmail.com">vitovolty@gmail.com</a> ;)</p>
+    </div>
+</body>
+</html>
